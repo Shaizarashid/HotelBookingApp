@@ -5,6 +5,7 @@ import authRouter from "./routes/auth.js"
 import usersRouter from "./routes/users.js"
 import hotelsRouter from "./routes/hotels.js"
 import roomsRouter from "./routes/rooms.js"
+import historyRouter from "./routes/history.js"
 import cookieParser from "cookie-parser"
 import cors from "cors"
 
@@ -34,6 +35,7 @@ app.use("/api/auth", authRouter)
 app.use("/api/users", usersRouter)
 app.use("/api/hotels", hotelsRouter)
 app.use("/api/rooms", roomsRouter)
+app.use('/api', historyRouter);
 
 app.use((err,req,res,next) =>{
     const errorStatus = err.status || 500
